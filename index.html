@@ -4,13 +4,33 @@
 <style>
   body {
     background-color: #F0F8FF;
+    margin: 0;
   }
-  .centered {
-    display: block;
-    margin: 0 auto;
+  #menu {
+    width: 300px;
+    margin: 15px 0 15px 15px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  #menu ul.nested {
+    padding-left: 23px;
+    list-style: lower-greek;
+  }
+  #content {
+    width: 650px;
+    margin: 15px 0 0 320px;
   }
   #text {
-    width: 650px;
     text-align: justify;
     font-family: sans-serif;
     font-size: 20px;
@@ -19,26 +39,72 @@
     color: #3C3000;
   }
   #audio {
-    width: 650px;
+    width: 100%;
     height: 1020px;
     border: 0;
   }
   #lyrics {
-    width: 650px;
     font-size: 20px;
     color: #3C3000;
   }
   #footer {
     text-align: center;
-    margin: 30px 0 0;
+    padding: 50px 0 0;
+    margin: 0 0 100%;
   }
-  #footer a, #lyrics a {
+  #footer a, #lyrics a, #menu a {
     color: #5F9EA0;
+  }
+  #menu a.active {
+    font-weight: bold;
   }
 </style>
 </head>
 <body>
-<div class='centered' id='text'>
+<div id='menu'>
+<ul>
+<li>
+<a class='menu-item' href='#text'>Они</a>
+</li>
+<li>
+<a class='menu-item' href='#audio'>Angelic Activism by Alice SpaceDoll</a>
+</li>
+<li>
+<a class='menu-item' href='#lyrics'>Перевод песен</a>
+<ul class='nested'>
+<li>
+<a class='menu-item' href='#heaven-on-earth-song'>РАЙ НА ЗЕМЛЕ</a>
+</li>
+<li>
+<a class='menu-item' href='#changer-song'>ПЕРЕМЕНЬЩИК (CHANGER)</a>
+</li>
+<li>
+<a class='menu-item' href='#we-are-the-ones-song'>МЫ ТЕ</a>
+</li>
+<li>
+<a class='menu-item' href='#Gaia-song'>ГАЙЯ</a>
+</li>
+<li>
+<a class='menu-item' href='#to-lie-is-to-push-song'>ЛГАТЬ ЗНАЧИТ ОТТАЛКИВАТЬ</a>
+</li>
+<li>
+<a class='menu-item' href='#mirrors-and-reflections-song'>ЗЕРКАЛА И ОТРАЖЕНИЯ</a>
+</li>
+<li>
+<a class='menu-item' href='#if-god-is-out-there-song'>ЕСЛИ БОГ ГДЕ-ТО ТАМ</a>
+</li>
+<li>
+<a class='menu-item' href='#end-game'>ПОСЛЕДНЯЯ ИГРА</a>
+</li>
+</ul>
+</li>
+<li>
+<a class='menu-item' href='#footer'>Контакты</a>
+</li>
+</ul>
+</div>
+<div id='content'>
+<div class='item' id='text'>
 <p>
 В их представлении, человеческая природа состоит из двух сущностей: сотворенной демиургом телесной, состоящей из материи, и духовной, имеющей божественное происхождение. При этом зародыш божественной жизни содержится в каждом человеке, и каждый при благоприятных условиях способен в той или иной форме воспринять послание божественной правды. Демиург, «сотворив» человека путем соединения его духовной и телесной сущностей, пытался удержать первого человека в абсолютном рабстве. Первый человек не должен был сознавать свою высшую природу, дабы у него не обнаружилось стремление высвободиться из царства демиурга. Отсюда — и повеление не есть от дерева познания добра и зла. Но Адам ослушался повеления демиурга, и его непослушание разорвало оковы рабства; таким образом, он и его род достигли осознания своей высшей природы, a грехопадение в Эдеме — не грех, а наоборот, благо и необходимая предпосылка для будущего искупления.
 </p>
@@ -61,13 +127,13 @@
 О ком речь?
 </p>
 </div>
-<iframe class='centered' id='audio' seamless src='https://bandcamp.com/EmbeddedPlayer/album=1040123770/size=large/bgcol=ffffff/linkcol=63b2cc/transparent=true/'>
+<iframe class='item' id='audio' seamless src='https://bandcamp.com/EmbeddedPlayer/album=1040123770/size=large/bgcol=ffffff/linkcol=63b2cc/transparent=true/'>
 <a href='http://alicespacedoll.bandcamp.com/album/angelic-activism'>
 Angelic Activism by Alice SpaceDoll
 </a>
 </iframe>
-<div class='centered' id='lyrics'>
-<h3 id='heaven-on-earth-song'>
+<div class='item' id='lyrics'>
+<h3 class='item' id='heaven-on-earth-song'>
 <a href='#heaven-on-earth-song'>
 РАЙ НА ЗЕМЛЕ
 </a>
@@ -126,7 +192,7 @@ Angelic Activism by Alice SpaceDoll
 &nbsp;
 потому что я сомневаюсь
 похоже, я сомневаюсь</pre>
-<h3 id='changer-song'>
+<h3 class='item' id='changer-song'>
 <a href='#changer-song'>
 ПЕРЕМЕНЬЩИК (CHANGER)
 </a>
@@ -177,7 +243,7 @@ Angelic Activism by Alice SpaceDoll
 ответы
 ответы
 ответы</pre>
-<h3 id='we-are-the-ones-song'>
+<h3 class='item' id='we-are-the-ones-song'>
 <a href='#we-are-the-ones-song'>
 МЫ ТЕ
 </a>
@@ -211,7 +277,7 @@ Angelic Activism by Alice SpaceDoll
 ах, я хочу увидеть тебя
 мы едины
 я вижу тебя</pre>
-<h3 id='Gaia-song'>
+<h3 class='item' id='Gaia-song'>
 <a href='#Gaia-song'>
 ГАЙЯ
 </a>
@@ -279,7 +345,7 @@ Angelic Activism by Alice SpaceDoll
 будь светом любви на земле
 возрождайся перерождайся
 возрождайся перерождайся</pre>
-<h3 id='to-lie-is-to-push-song'>
+<h3 class='item' id='to-lie-is-to-push-song'>
 <a href='#to-lie-is-to-push-song'>
 ЛГАТЬ ЗНАЧИТ ОТТАЛКИВАТЬ
 </a>
@@ -318,7 +384,7 @@ Angelic Activism by Alice SpaceDoll
 любимый мой, это так
 &nbsp;
 любимый мой, это так</pre>
-<h3 id='mirrors-and-reflections-song'>
+<h3 class='item' id='mirrors-and-reflections-song'>
 <a href='#mirrors-and-reflections-song'>
 ЗЕРКАЛА И ОТРАЖЕНИЯ
 </a>
@@ -358,7 +424,7 @@ Angelic Activism by Alice SpaceDoll
 &nbsp;
 стук моего сердца
 тепло моей крови</pre>
-<h3 id='if-god-is-out-there-song'>
+<h3 class='item' id='if-god-is-out-there-song'>
 <a href='#if-god-is-out-there-song'>
 ЕСЛИ БОГ ГДЕ-ТО ТАМ
 </a>
@@ -438,7 +504,7 @@ Angelic Activism by Alice SpaceDoll
 &nbsp;
 я знаю, ты тоже слышишь эти слова
 ты во мне, а я в тебе</pre>
-<h3 id='end-game'>
+<h3 class='item' id='end-game'>
 <a href='#end-game'>
 ПОСЛЕДНЯЯ ИГРА
 </a>
@@ -486,10 +552,35 @@ Angelic Activism by Alice SpaceDoll
 если же это последний раз, пусть он будет настоящим и необузданным
 пусть он сияет</pre>
 </div>
-<div id='footer'>
+</div>
+<div class='item' id='footer'>
 <a href='mailto:cyberpaulician@gmail.com'>
 cyberpaulician@gmail.com
 </a>
 </div>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+  (function() {
+    var items, menuItems, win;
+  
+    win = jQuery(window);
+  
+    menuItems = jQuery('.menu-item');
+  
+    items = jQuery('.item');
+  
+    win.scroll(function() {
+      return jQuery.each(items, function(key, value) {
+        var item;
+        item = jQuery(value);
+        if (win.scrollTop() > (item.offset().top - 30)) {
+          jQuery('.menu-item.active').removeClass('active');
+          return menuItems.filter("[href=#" + item.attr('id') + "]").addClass('active');
+        }
+      });
+    });
+  
+  }).call(this);
+</script>
 </body>
 </html>
