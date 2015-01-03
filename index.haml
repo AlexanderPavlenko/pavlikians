@@ -8,14 +8,21 @@
         background-color: #F0F8FF;
         margin: 0;
       }
+      @media screen and (min-width: 970px) {
+        #menu {
+          position: fixed;
+          z-index: 10;
+          top: 0;
+          left: 0;
+          bottom: 0;
+        }
+        #content {
+          margin: 15px 0 0 320px !important;
+        }
+      }
       #menu {
         width: 300px;
         margin: 15px 0 15px 15px;
-        position: fixed;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        bottom: 0;
         overflow-y: auto;
         overflow-x: hidden;
       }
@@ -30,7 +37,7 @@
       }
       #content {
         width: 650px;
-        margin: 15px 0 0 320px;
+        margin: 15px;
       }
       #text {
         text-align: justify;
