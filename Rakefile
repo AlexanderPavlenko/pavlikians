@@ -3,5 +3,5 @@ task :build do
 end
 
 task publish: :build do
-  `mv index.html /tmp/ && git checkout gh-pages && mv /tmp/index.html . && git add -u && git commit -m publish && git push --all`
+  `mv index.html /tmp/ && git checkout gh-pages && mv /tmp/index.html . && git add -u && git commit -m publish && git push --all && git checkout master`
 end
